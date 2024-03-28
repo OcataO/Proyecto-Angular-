@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Lista de productos: </h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Producto of productsList">
+        <th scope="row">{{Producto.id}}</th>
+        <td>{{Producto.title}}</td> <!--title(antes era name) viene de producto.modelo.ts-->
+        <td [ngClass]="{'red-color': Producto.price > 200}">{{Producto.price | currency}}</td>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/productos', Producto.id]">Ver detalle</button>
+      </tr>      
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,7 @@
+<form [formGroup]="formularioDocumento">
+<label for="name" class="form-label">{{variableNueva}}</label>
+<input [ngClass]="{'is-invalid': hasError('rut', 'required') || hasError('rut', 'minlength')}" 
+type="text" class="form-control" id="name" formControlName="rut">    
+<div class="text-danger" *ngIf="hasError('rut', 'required')"> {{variableNueva}} requerido </div>    
+<div class="text-danger" *ngIf="hasError('rut', 'minlength')"> {{variableNueva}} requiere minimo 3 caracteres </div>
+</form>
